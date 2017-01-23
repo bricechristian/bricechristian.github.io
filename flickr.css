@@ -14,10 +14,6 @@ body {
 
 .container {
   margin: 150px auto;
-/*  background-color:rgba(192,192,192,0.6);
-  height: 600px;
-  border-radius: 10px;*/
-
 }
 
 .stuff button {
@@ -119,41 +115,36 @@ li {
 }
 
 
-
-
-
-/* -_-_-_-_-_-_-_-_-Background-Slider-_-_-_-_-_-_-_-_-_- */
-
-.wrap {
-	height: 100%;
-	width: 100%;
-	position:relative; 	
-	overflow: hidden;
+/* Back Pulse */
+@-webkit-keyframes hvr-back-pulse {
+  50% {
+    background-color: rgba(255, 153, 0, 0.75);
+  }
 }
-
-.slide {
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 100%;
-	z-index: 10;
-	padding: 8em 1em 0;
-	background-position: 50% 50%;
-	background-size: cover;
+@keyframes hvr-back-pulse {
+  50% {
+    background-color: rgba(255, 153, 0, 0.75);
+  }
 }
-
-.slide-one { background-image: url('../flickr/beach.jpeg'); }
-
-.slide-two { background-image: url('../flickr/forrest.jpeg'); }
-
-.slide-three { background-image: url('../flickr/seattle.jpeg'); }
-
-.slide-four { background-image: url('../flickr/greece.jpeg'); }
-
-
-
-
+.hvr-back-pulse {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  overflow: hidden;
+  -webkit-transition-duration: 1.0s;
+  transition-duration: 1.0s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}
+.hvr-back-pulse:hover, .hvr-back-pulse:focus, .hvr-back-pulse:active {
+  -webkit-animation-name: hvr-back-pulse;
+  animation-name: hvr-back-pulse;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-color: #ff9900;
+  color: white;
+}
 
 /* -_-_-_-_-_-_-_-_-Lightbox-_-_-_-_-_-_-_-_-_- */
 
