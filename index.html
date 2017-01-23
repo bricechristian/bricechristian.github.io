@@ -3,34 +3,59 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="lightbox.css">
+  <link rel="stylesheet" type="text/css" href="vegas.css">
   <link rel="stylesheet" type="text/css" href="flickr.css">
+
   <title>Travel With Me</title>
 </head>
 <body>
-    
-    <div class="header">
-    	<a href="index.html"><img src="travel-logo.png"></a> 
-     </div>
+   
+  <div class="grid">
+      <div class="row">
+
+        
+         <div class="col-L-12">
+          <div class="top col">
+          	<a href="index.html"><img id="top_logo" src="trave-logo2.png"></a>
+          </div>
+        </div>
 
 
-   <div class="surround">
-    	<div class="container">
-	        <div class="stuff">
-	          <img id="stuff_logo" src="travel-logo.png">
-		      <h1 class="h1">Travel to a City, State or Country</h1>
+         <div class="col-L-12">
+          <div class="header col"></div>
+        </div>
+        
+        <div class="container col-L-12">
+          <div class="stuff col">
+            
+			  <img id="stuff_logo" src="trave-logo2.png">
+              <h1 class="h1">Travel to a City, State or Country</h1>
 	          <input type="text" class="query" placeholder="London...">
 		      <h1 class="h1">Travel to a particular place there</h1>
 	          <input type="text" class="tags" placeholder="Eiffel Tower...">
 		      <button>Search</button>
-	        </div>
-		</div>
-	</div>
-	
-	<div class="results_container">
-		<ul class="results"></ul>
-	</div>
+          
+          </div>
+        </div>
+      
+         <div class="col-L-12">
+          <div class="results col">
+          		
+          		<div class="backdrop"></div>
+				<div class="box">
+					<div class="close">x</div>
+				</div>
+          </div>
+	     </div>
+
+    </div>
+  </div>
+  
     
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script type="text/javascript" src="lightbox.js"></script>
+ <script src="vegas.js"></script>
  <script type="text/javascript" src="flickr.js"></script>
 
 </body>

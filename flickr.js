@@ -1,5 +1,6 @@
 
 
+
 // function render(data) {
 //     var photos = data.items;
 //     console.log(data);
@@ -39,27 +40,64 @@
 
 
 
-
-
-
-
+$('.results').hide();
 $('.header').hide();
+$('.top').hide();
 
 function render(data) {
   
-  $('ul').empty();
+$('body').vegas('destroy');  
+$('ul').empty();
 
     var photos = data.photos.photo;
     console.log(photos);
 
 
-    for (var i = 0; i < photos.length; i++) {
+for(var i = 0; i < photos.length; i ++) {
+    
+  var $template = $('<li><a><img></a></li>');
+  var photo = photos[i];
+  var url = 'http://farm' + photo.farm + '.static.flickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_b.jpg';
+    
+  $template
+       .find('a')
+       .attr({
+        'href' : url,
+        'data-lightbox': 'roadtrip'
+      })
+      .find('img')
+      .attr({
+        'src': url,
+        'class': 'thumbnail'
+      });
 
-        var photo = photos[i];
+  $('.results').show().append($template);
+    
+}
 
-        var photoURL = 'http://farm' + photo.farm + '.static.flickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_m.jpg';
-        $('.results').append('<li><a href="' + photoURL + '" ><img class="thumbnail" src= "' + photoURL + '" >');
-    }
+
+
+
+    // for (var i = 0; i < photos.length; i++) {
+
+
+
+    //     var photo = photos[i];
+    //     var photoURL = 'http://farm' + photo.farm + '.static.flickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_c.jpg';
+    //     var IMG = $('<a href="' + photoURL + '" >')
+    //     .attr('data-lightbox','roadtrip')
+    //     .append('<img class="thumbnail" src="' + photoURL + '" >');
+
+    //     console.log(IMG);
+
+    //     $('.results').show().append('<li>' + IMG);
+
+    // }
+
+
+  if( $('.results').is(':empty') ) {
+   $('.results').text("No results have been found. Try searching for something different!").addClass('error'); 
+  }
 }
 
 function search() {
@@ -73,7 +111,9 @@ function search() {
             text: $('.query').val(),
             format: 'json',
             safe_search: '1',
-            privacy_filter: '1' 
+            privacy_filter: '1',
+            sort: 'interestingness-desc',
+            secret: 'd2d8386333f099af'
         }
     };
 
@@ -113,13 +153,14 @@ setInterval(function() {
 // empty search container and display results big with new search bar now at the top
 
 function emptyNew () {
-  $('.surround').slideUp("slow");
+  $('.container').slideUp("slow");
 
   setTimeout(function(){
     $('.header').show();
-    $('.stuff').appendTo($('.header')).show().removeClass('stuff').addClass('block');
-    $('.h1').hide();
     $('#stuff_logo').hide();
+    $('.stuff').appendTo($('.header')).show().removeClass('stuff');
+    $('.h1').hide();
+    $('.top').show();
       }, 1000);
 
 
@@ -133,6 +174,7 @@ function emptyNew () {
 // run button click
 
 $('button').on('click', function() {
+    $('.results').empty();
     search();
     emptyNew();
 
@@ -141,3 +183,17 @@ $('button').on('click', function() {
 
 
 
+
+// vegas background slider
+
+$("body").vegas({
+    slides: [
+        { src: "beach.jpeg" },
+        { src: "country.jpeg" },
+        { src: "forrest.jpeg" },
+        { src: "greece.jpeg" },
+        { src: "paris.jpg" },
+        { src: "sanfran.jpg" },
+        { src: "seattle.jpeg" }
+    ]
+});
