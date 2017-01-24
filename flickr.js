@@ -39,14 +39,13 @@
 // })
 
 
-
+$('.container').slideDown("slow");
 $('.results').hide();
 $('.header').hide();
 $('.top').hide();
 
 function render(data) {
   
-$('body').vegas('destroy');  
 $('ul').empty();
 
     var photos = data.photos.photo;
@@ -153,6 +152,7 @@ setInterval(function() {
 // empty search container and display results big with new search bar now at the top
 
 function emptyNew () {
+  $('body').vegas('destroy');
   $('.container').slideUp("slow");
 
   setTimeout(function(){
@@ -173,7 +173,7 @@ function emptyNew () {
 
 // run button click
 
-$('button').on('click', function() {
+$('button').on('click', function() { 
     $('.results').empty();
     search();
     emptyNew();
