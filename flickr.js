@@ -182,18 +182,16 @@ $('button').on('click', function() {
 
 
 
-
-
 // vegas background slider
 
 $("body").vegas({
     slides: [
-        { src: "beach.jpeg" },
-        { src: "country.jpeg" },
-        { src: "forrest.jpeg" },
-        { src: "greece.jpeg" },
-        { src: "paris.jpg" },
-        { src: "sanfran.jpg" },
-        { src: "seattle.jpeg" }
+        { src: "http://traveloregon.com/content/uploads/2012/05/cannon-beach-heeb.jpg" },
+        { src: "https://www.canon.com.au/-/media/images/canon/carousels/powershot-g1-x-mark-ii/powershot-g1-x-mark-ii-sample-image-1.ashx" },
+        { src: "http://40.media.tumblr.com/5e6948eabab4b629987c55ee85e6b7c0/tumblr_nvucdgyMof1tgoy1wo3_1280.jpg" },
+        { src: "https://cdn.munplanet.com/storage/uploads/52209627db7c13603b000001/topic/background_image/54c3ba73db7c1355c2002b03/Santorini-Greece-5.jpg" },
+        { src: "http://40.media.tumblr.com/bcc0f5315ce21ddb6db4e47e7eaccb5d/tumblr_o1lxt6T4Uz1qdvvaoo1_1280.jpg" },
+        { src: "http://dgmanila.com/wp-content/uploads/2017/04/swiss_20.jpg" },
+        { src: "https://www.cinema5d.com/wp-content/uploads/2013/06/scot_landscape_4.jpg" }
     ]
 });
