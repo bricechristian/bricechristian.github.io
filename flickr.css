@@ -86,6 +86,10 @@ h1{
     color: white;
 }
 
+.bio {
+  margin-bottom: 50px;
+}
+
 li {
   list-style: none; 
   display: inline-block;
@@ -144,6 +148,31 @@ li {
   animation-iteration-count: infinite;
   background-color: #ff9900;
   color: white;
+}
+
+/*.footer {
+  position: relative;
+  top: 100px;
+}*/
+
+.closing-tag {
+    color: white;
+    font-size: .9em;
+    font-weight: normal;
+    letter-spacing: 0.25em;
+    padding: 0 3em;
+    text-align: center;
+    text-transform: uppercase;    
+}
+
+.closing-tag:hover {
+  color: #ff9900;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
 }
 
 /* -_-_-_-_-_-_-_-_-Lightbox-_-_-_-_-_-_-_-_-_- */
