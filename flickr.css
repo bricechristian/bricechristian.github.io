@@ -46,12 +46,32 @@ input {
     height: 4.1em;
     letter-spacing: 0.25em;
     line-height: 4.25em;
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
     box-shadow: inset 0 0 0 1px #ffffff;
     margin: 10px 0 20px;
     background-color: transparent;
+}
 
+input[type="text"] {
+  text-indent: 25px;
+}
+
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
+  font-style: italic;
+}
+input::-moz-placeholder { /* Firefox 19+ */
+  color: white;
+  font-style: italic;
+}
+input:-ms-input-placeholder { /* IE 10+ */
+  color: white;
+  font-style: italic;
+}
+input:-moz-placeholder { /* Firefox 18- */
+  color: white;
+  font-style: italic;
 }
 
 button {
